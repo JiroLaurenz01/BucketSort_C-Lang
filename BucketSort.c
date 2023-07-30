@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
- 
+
+// Function to find the maximum element in the array
 int MaxElement(int array[], int size) 
 {  
-	//O(n)
     int max = 0;  
     for (int i = 0; i < size; i++)
         max = fmax(array[i], max);
@@ -12,33 +12,32 @@ int MaxElement(int array[], int size)
     return max; 
 }
 
+// Function to perform Bucket Sort
 void BucketSort(int array[], int size) 
 {  
     int max = MaxElement(array, size);
     int bucket[max + 1];
 
-	//O(n)
+    // Initialize the bucket array with 0
     for (int i = 0; i <= max; i++)  
     	bucket[i] = 0;  
  
-	//O(n)
-	//COUNTING STAGE
+    // Count the occurrences of each element in the input array
     for (int i = 0; i < size; i++)
     	bucket[array[i]]++;
 
-	//O(n^2)
-	//SORTING STAGE
+    // Sort the elements in the array using the bucket counts
     for (int i = 0, j = 0; i <= max; i++)  
-		for (; bucket[i] > 0; (bucket[i])--)
-			array[j++] = i;    
+	for (; bucket[i] > 0; (bucket[i])--)
+		array[j++] = i;    
 }  
 
 int main(void) 
 {
-	int array[100], i, num; 
+    int array[100], i, num;
 
-	printf("Enter the size of array: ");   
-    scanf("%d", &num);   
+    printf("Enter the size of the array: ");
+    scanf("%d", &num); 
     printf("Enter the %d elements to be sorted:\n",num); 
     for (i = 0; i < num; i++)
         scanf("%d", &array[i]); 
@@ -47,7 +46,7 @@ int main(void)
         printf("%d ", array[i]);  
     printf("\nThe array of elements after sorting: \n"); 
  
-    // Calling bucket sort function 
+    // Calling the Bucket Sort function
     BucketSort(array, num); 
     for (i = 0; i < num; i++)
         printf("%d ", array[i]);   
