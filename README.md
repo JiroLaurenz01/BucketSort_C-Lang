@@ -47,4 +47,4 @@ Contributions to improve the algorithm's efficiency, extend the implementation, 
 
 ---
 
-This README provides a brief overview of the repository, instructions on how to use the code, details about the Bucket Sort algorithm, its performance and the information on contributing. Feel free to expand on each section to provide more comprehensive details and explanations.
+This README provides a brief overview of the repository, instructions on how to use the code, details about the Bucket Sort algorithm, its performance, and the information on contributing. Feel free to expand on each section to provide more comprehensive details and explanations.
